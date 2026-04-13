@@ -70,7 +70,7 @@ export default function ValuesAccordion() {
       <div className="mx-auto max-w-[1200px] px-6 md:px-10">
         <div className="mb-10 text-center md:mb-12">
           <h2 className="mx-auto mt-3 max-w-3xl text-[clamp(34px,6vw,72px)] font-medium leading-[1.02] tracking-[-0.07em] gradient-text">
-            Our values.
+            Our values
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-[14px] leading-relaxed tracking-[-0.01em] text-white/65">
             The principles behind every workflow we design.

@@ -20,9 +20,9 @@ export default function AboutTeam() {
           className="grid items-start gap-10 md:grid-cols-2 md:gap-14"
         >
           <div className="order-2 md:order-1">
-            <p className="text-[12px] font-medium uppercase tracking-[0.15em] text-white/70">
-              Our Team
-            </p>
+            <h2 className="text-[clamp(28px,4.4vw,56px)] font-medium leading-[1.02] tracking-[-0.07em] gradient-text">
+              Our team
+            </h2>
             <p className="mt-5 max-w-3xl whitespace-pre-line text-[14px] leading-relaxed tracking-[-0.01em] text-white/65 md:text-[15px]">
               Brilliance AI is a Singapore-based team with a dedicated development team also based in Singapore, focused on building agentic AI workflows for businesses.
               {"\n\n"}
@@ -36,7 +36,7 @@ export default function AboutTeam() {
             <div className="relative mx-auto aspect-[4/3] w-full max-w-[560px]">
               <Image
                 src="/marketing/characters/Untitled%20design%20(1).png"
-                alt=""
+                alt="Brilliance AI team"
                 fill
                 priority
                 className="object-contain"

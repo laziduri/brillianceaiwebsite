@@ -17,48 +17,30 @@ const STEPS: readonly Step[] = [
   {
     key: "vision",
     header: "Our Vision",
-    title: "To Set the Standard for How Businesses Use AI",
+    title: "To Set the Standard for How Businesses Use Agentic AI",
     blocks: [
       {
         heading: "",
-        body: "We aim to help businesses move beyond basic tools and build AI systems that improve how work is executed across sales, marketing, and operations.",
+        body: "We believe agentic AI will become a core part of how businesses operate.",
       },
       {
         heading: "",
-        body: "AI should not sit on the side.\nIt should be part of how a business runs.",
-      },
-      {
-        heading: "To Build AI Workflows That Deliver Real Business Results",
-        body: "We design and implement structured AI systems that help businesses:",
+        body: "Our vision is to help businesses adopt structured AI workflows that improve execution, reduce manual work, and support long-term growth.",
       },
     ],
-    bullets: [
-      "capture more opportunities",
-      "reduce manual work",
-      "improve consistency",
-      "operate more efficiently",
-    ],
-    closing:
-      "Our focus is simple.\nBuild systems that work in real business environments.",
+    bullets: [],
   },
   {
     key: "mission",
     header: "Our Mission",
-    title: "To Build Practical AI Systems That Create Real Business Value",
+    title: "To Replace Manual Work with Agentic AI Workflows",
     blocks: [
       {
         heading: "",
-        body: "Our mission is to design and implement AI workflows that help businesses:",
+        body: "We build systems that handle operations, follow-ups, and processes automatically, allowing businesses to operate faster, more efficiently, and with less reliance on manual effort.",
       },
     ],
-    bullets: [
-      "capture more opportunities",
-      "reduce manual work",
-      "improve consistency",
-      "operate more efficiently",
-    ],
-    closing:
-      "We focus on building systems that support real operations, not just generating outputs.\n\nIf it does not improve how the business runs, it does not belong.",
+    bullets: [],
   },
 ];
 
@@ -129,10 +111,10 @@ export default function PinnedVisionMission() {
           <div className="h-full w-full rounded-full bg-white" />
         </div>
 
-        <div className="relative z-10 mx-auto flex h-full max-w-[1200px] flex-col justify-center px-6 md:px-10">
-          <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-12">
+        <div className="relative z-10 mx-auto flex h-full w-full max-w-[1100px] flex-col justify-center px-6 md:px-10">
+          <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-12 md:items-center">
             {/* Copy */}
-            <div className="md:col-span-7">
+            <div className="md:col-span-7 md:pr-4">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={step.key}
@@ -151,41 +133,43 @@ export default function PinnedVisionMission() {
                   }
                   transition={{ duration: 0.5, ease }}
                 >
-                  <p className="text-[clamp(34px,6vw,72px)] font-medium leading-[1.02] tracking-[-0.07em] gradient-text">
+                  <p className="text-[clamp(28px,4.5vw,52px)] font-medium leading-[1.05] tracking-[-0.05em] text-white">
                     {step.header}
                   </p>
 
-                  <h3 className="mt-4 text-[clamp(22px,3.2vw,36px)] font-medium leading-[1.08] tracking-[-0.05em] text-white/85">
+                  <h3 className="mt-4 max-w-2xl text-[clamp(20px,2.6vw,30px)] font-medium leading-snug tracking-[-0.04em] text-white">
                     {step.title}
                   </h3>
 
-                  <div className="mt-8 space-y-6 max-w-3xl">
+                  <div className="mt-8 max-w-2xl space-y-5">
                     {step.blocks.map((b, i) => (
                       <div key={i} className="space-y-2">
                         {b.heading ? (
-                          <p className="text-[13px] font-medium tracking-[-0.01em] text-white/80">
+                          <p className="text-[13px] font-medium tracking-[-0.01em] text-white">
                             {b.heading}
                           </p>
                         ) : null}
-                        <p className="whitespace-pre-line text-[15px] leading-relaxed tracking-[-0.01em] text-white/65">
+                        <p className="whitespace-pre-line text-[15px] font-normal leading-relaxed tracking-[-0.02em] text-white md:text-[16px]">
                           {b.body}
                         </p>
                       </div>
                     ))}
 
-                    <ul className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
-                      {step.bullets.map((t) => (
-                        <li
-                          key={t}
-                          className="rounded-lg border border-white/[0.06] bg-white/[0.02] px-3 py-2 text-[13px] tracking-[-0.01em] text-white/55"
-                        >
-                          {t}
-                        </li>
-                      ))}
-                    </ul>
+                    {step.bullets.length > 0 ? (
+                      <ul className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-2">
+                        {step.bullets.map((t) => (
+                          <li
+                            key={t}
+                            className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-[13px] tracking-[-0.01em] text-white"
+                          >
+                            {t}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : null}
 
                     {step.closing ? (
-                      <p className="whitespace-pre-line text-[14px] leading-relaxed tracking-[-0.01em] text-white/55">
+                      <p className="whitespace-pre-line text-[15px] font-normal leading-relaxed tracking-[-0.02em] text-white">
                         {step.closing}
                       </p>
                     ) : null}
@@ -211,17 +195,17 @@ export default function PinnedVisionMission() {
                 </div>
 
                 {/* Labels */}
-                <div className="mb-4 hidden md:flex items-center justify-between">
+                <div className="mb-4 hidden md:flex items-center justify-between gap-4">
                   <div
                     className={`text-[12px] font-medium tracking-[-0.01em] transition-colors ${
-                      active === 0 ? "text-white/85" : "text-white/60"
+                      active === 0 ? "text-white" : "text-white/50"
                     }`}
                   >
                     Our Vision
                   </div>
                   <div
                     className={`text-[12px] font-medium tracking-[-0.01em] transition-colors ${
-                      active === 1 ? "text-white/85" : "text-white/60"
+                      active === 1 ? "text-white" : "text-white/50"
                     }`}
                   >
                     Our Mission
@@ -250,7 +234,7 @@ export default function PinnedVisionMission() {
                   </div>
                 </div>
 
-                <p className="mt-4 text-[12px] leading-relaxed tracking-[-0.01em] text-white/65">
+                <p className="mt-4 text-[12px] leading-relaxed tracking-[-0.01em] text-white/80">
                   Scroll to move from Vision to Mission.
                 </p>
               </div>
