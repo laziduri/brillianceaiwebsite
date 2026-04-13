@@ -13,6 +13,10 @@ type Step = {
   closing?: string;
 };
 
+/** Vision = portrait character; mission = 16:9 transparent art (swap on scroll). */
+const VISION_IMAGE = "/marketing/characters/Gemini_Generated_Image_a76eqpa76eqpa76e.png";
+const MISSION_IMAGE = "/Untitled%20design%20(2).png";
+
 const STEPS: readonly Step[] = [
   {
     key: "vision",
@@ -182,7 +186,7 @@ export default function PinnedVisionMission() {
 
             {/* Right rail + media placeholder */}
             <div className="md:col-span-5 md:pl-6">
-              <div className="relative mx-auto w-full max-w-[420px]">
+              <div className="relative mx-auto w-full max-w-[min(100%,280px)] sm:max-w-[300px] md:max-w-[360px]">
                 {/* Rail */}
                 <div className="absolute -left-5 top-0 hidden h-full md:block" aria-hidden>
                   <div className="relative h-full w-[2px] rounded-full bg-white/[0.08]">
@@ -212,25 +216,37 @@ export default function PinnedVisionMission() {
                   </div>
                 </div>
 
-                {/* Media placeholder (you can replace with Image later) */}
-                <div className="glass-card overflow-hidden rounded-2xl">
-                  <div className="relative aspect-[4/5] w-full bg-white/[0.02]">
-                    <div
-                      className="pointer-events-none absolute inset-0"
-                      style={{
-                        background:
-                          "radial-gradient(ellipse 90% 70% at 50% 30%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.015) 55%, transparent 72%)",
-                      }}
-                      aria-hidden
-                    />
-                    <Image
-                      src="/marketing/characters/Gemini_Generated_Image_a76eqpa76eqpa76e.png"
-                      alt="BrillianceAI — our vision and mission"
-                      fill
-                      priority={false}
-                      sizes="(max-width: 768px) 100vw, 420px"
-                      className="object-cover opacity-90"
-                    />
+                <div className="relative w-full">
+                  <div className="relative aspect-video w-full">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={step.key}
+                        className="absolute inset-0"
+                        initial={
+                          reduceMotion ? false : { opacity: 0, scale: 0.98 }
+                        }
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={
+                          reduceMotion
+                            ? { opacity: 0 }
+                            : { opacity: 0, scale: 0.98 }
+                        }
+                        transition={{ duration: 0.45, ease }}
+                      >
+                        <Image
+                          src={step.key === "vision" ? VISION_IMAGE : MISSION_IMAGE}
+                          alt={
+                            step.key === "vision"
+                              ? "BrillianceAI — our vision"
+                              : "BrillianceAI — our mission"
+                          }
+                          fill
+                          priority={false}
+                          sizes="(max-width: 640px) 280px, (max-width: 768px) 300px, 360px"
+                          className="object-contain object-center"
+                        />
+                      </motion.div>
+                    </AnimatePresence>
                   </div>
                 </div>
 
