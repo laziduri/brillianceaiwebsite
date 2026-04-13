@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 type Step = {
@@ -14,7 +14,7 @@ type Step = {
 };
 
 /** Vision = portrait character; mission = 16:9 transparent art (swap on scroll). */
-const VISION_IMAGE = "/marketing/characters/Gemini_Generated_Image_a76eqpa76eqpa76e.png";
+const VISION_IMAGE = "/Untitled%20design%20(4).png";
 const MISSION_IMAGE = "/Untitled%20design%20(2).png";
 
 const STEPS: readonly Step[] = [
@@ -82,39 +82,16 @@ export default function PinnedVisionMission() {
 
   const step = STEPS[active];
 
-  const accent = useMemo(() => {
-    // Subtle motion-only: shift a tiny highlight as you scroll.
-    const y = 30 + progress * 120;
-    return { transform: `translate3d(0, ${y}px, 0)` };
-  }, [progress]);
-
   const ease = [0.22, 1, 0.36, 1] as const;
 
   return (
     <section
       ref={sectionRef}
-      className="relative bg-[#050507]"
+      className="relative bg-[#000000]"
       aria-label="Vision and mission"
       style={{ height: "200vh" }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-60"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 55% at 50% 40%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.012) 55%, transparent 75%)",
-          }}
-          aria-hidden
-        />
-
-        <div
-          className="pointer-events-none absolute left-1/2 top-0 h-[60vh] w-[900px] -translate-x-1/2 blur-3xl opacity-[0.08]"
-          style={accent}
-          aria-hidden
-        >
-          <div className="h-full w-full rounded-full bg-white" />
-        </div>
-
         <div className="relative z-10 mx-auto flex h-full w-full max-w-[1100px] flex-col justify-center px-6 md:px-10">
           <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-12 md:items-center">
             {/* Copy */}
@@ -191,7 +168,7 @@ export default function PinnedVisionMission() {
                 <div className="absolute -left-5 top-0 hidden h-full md:block" aria-hidden>
                   <div className="relative h-full w-[2px] rounded-full bg-white/[0.08]">
                     <motion.div
-                      className="absolute left-1/2 h-8 w-8 -translate-x-1/2 rounded-full border border-white/[0.12] bg-[#050507]/70 backdrop-blur"
+                      className="absolute left-1/2 h-8 w-8 -translate-x-1/2 rounded-full border border-white/[0.12] bg-black/70 backdrop-blur"
                       style={{ top: `calc(${progress * 100}% - 16px)` }}
                       transition={reduceMotion ? undefined : { duration: 0.12 }}
                     />
