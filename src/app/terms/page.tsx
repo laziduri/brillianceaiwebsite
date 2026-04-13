@@ -79,8 +79,8 @@ export default function TermsPage() {
             </div>
           </header>
 
-          <article className="space-y-10">
-            <section className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-5 py-6 md:px-6 md:py-7">
+          <article className="divide-y divide-white/[0.08]">
+            <section className="py-8 first:pt-0">
               <SectionHeading id="use">Use of the website</SectionHeading>
               <Prose>
                 <p>
@@ -92,7 +92,7 @@ export default function TermsPage() {
               </Prose>
             </section>
 
-            <section className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-5 py-6 md:px-6 md:py-7">
+            <section className="py-8">
               <SectionHeading id="ip">Intellectual property</SectionHeading>
               <Prose>
                 <p>
@@ -104,7 +104,7 @@ export default function TermsPage() {
               </Prose>
             </section>
 
-            <section className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-5 py-6 md:px-6 md:py-7">
+            <section className="py-8">
               <SectionHeading id="disclaimers">Disclaimers</SectionHeading>
               <Prose>
                 <p>
@@ -116,7 +116,7 @@ export default function TermsPage() {
               </Prose>
             </section>
 
-            <section className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-5 py-6 md:px-6 md:py-7">
+            <section className="py-8">
               <SectionHeading id="liability">Limitation of liability</SectionHeading>
               <Prose>
                 <p>
@@ -129,7 +129,7 @@ export default function TermsPage() {
               </Prose>
             </section>
 
-            <section className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-5 py-6 md:px-6 md:py-7">
+            <section className="py-8">
               <SectionHeading id="changes">Changes</SectionHeading>
               <Prose>
                 <p>
@@ -140,7 +140,7 @@ export default function TermsPage() {
               </Prose>
             </section>
 
-            <section className="rounded-2xl border border-white/[0.06] bg-white/[0.02] px-5 py-6 md:px-6 md:py-7">
+            <section className="py-8 last:pb-0">
               <SectionHeading id="contact">Contact</SectionHeading>
               <Prose>
                 <p>

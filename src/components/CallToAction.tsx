@@ -56,7 +56,11 @@ export default function CallToAction() {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="flex flex-col sm:flex-row gap-3 justify-center"
           >
-            <a href="#" className="btn-primary inline-flex items-center justify-center gap-2" id="cta-final-consultation">
+            <a
+              href="/contact/sales"
+              className="btn-primary inline-flex items-center justify-center gap-2"
+              id="cta-final-consultation"
+            >
               <span>Book a Free Consultation</span>
               <ArrowRight className="w-4 h-4 relative z-10" />
             </a>
